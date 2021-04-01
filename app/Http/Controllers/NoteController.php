@@ -63,7 +63,8 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $note = Note::find($id);
+        return view('edit', ['note' => $note]);
     }
 
     /**
@@ -75,7 +76,10 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $note = Note::find($id);
+        $note->content = $request->input('content');
+        $note->save();
+        return redirect('notes');
     }
 
     /**
@@ -86,7 +90,9 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        $note->delete();
+        return redirect('notes');
     }
 
     public function search(Request $request) {

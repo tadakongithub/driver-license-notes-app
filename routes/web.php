@@ -22,3 +22,9 @@ Route::get('/notes', [NoteController::class, "index"]);
 Route::post('/search', [NoteController::class, "search"]);
 
 Route::post('/yearsearch', [NoteController::class, "yearsearch"]);
+
+Route::get('/edit/{id}', [NoteController::class, "edit"]);
+
+Route::put('/notes/{id}', [NoteController::class, "update"]);
+
+Route::delete('/notes/{id}', [NoteController::class, "destroy"]);
