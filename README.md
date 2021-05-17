@@ -4,3 +4,4 @@
 -   hard to remember flag
 -   login
 -   payment
+-   通知機能（エビングハウス）
